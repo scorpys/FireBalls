@@ -156,9 +156,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootPoint: {fileID: 2045540391}
-  _bulletTemplate: {fileID: 7097496517478384554, guid: 6afb90c163e5ff8488ce48c72f03247f, type: 3}
   _delayBetweenShoots: 0.25
   _recoilDistance: 0.2
+  _bulletTemplates:
+  - {fileID: 7097496517478384554, guid: 6afb90c163e5ff8488ce48c72f03247f, type: 3}
+  - {fileID: 3350790999454718644, guid: d1efb934a93e75549a3ad1b5a4a8e1da, type: 3}
 --- !u!65 &123192899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -639,6 +641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sizeView: {fileID: 587545684}
   _tower: {fileID: 185067049}
+  _winMessage: You win!
 --- !u!114 &587545684
 MonoBehaviour:
   m_ObjectHideFlags: 0
