@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -7,6 +6,7 @@ public class TowerSizeView : MonoBehaviour
 {
     [SerializeField] private TMP_Text _sizeView;
     [SerializeField] private Tower _tower;
+    [SerializeField] private String _winMessage;
 
     private void OnEnable()
     {
@@ -20,6 +20,14 @@ public class TowerSizeView : MonoBehaviour
 
     private void OnSizeUpdated(int size)
     {
-        _sizeView.text = size.ToString();
+        if (size > 0)
+        {
+            _sizeView.text = size.ToString();
+        }
+        else
+        {
+            _sizeView.text = _winMessage;
+        }
+        
     }
 }

@@ -6,9 +6,9 @@ using UnityEngine;
 public class Tank : MonoBehaviour
 {
     [SerializeField] private Transform _shootPoint;
-    [SerializeField] private Bullet _bulletTemplate;
     [SerializeField] private float _delayBetweenShoots;
     [SerializeField] private float _recoilDistance;
+    [SerializeField] private Bullet[] _bulletTemplates;
 
     private float _timeAfterShoot;
 
@@ -29,6 +29,7 @@ public class Tank : MonoBehaviour
 
     private void Shoot()
     {
-        Instantiate(_bulletTemplate, _shootPoint.position, Quaternion.identity);
+        var bullet = _bulletTemplates[Random.Range(0, _bulletTemplates.Length)];
+        Instantiate(bullet, _shootPoint.position, Quaternion.identity);
     }
 }
